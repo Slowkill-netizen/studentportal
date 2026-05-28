@@ -1,0 +1,13 @@
+{
+  "buildCommand": "echo 'Static files only'",
+  "outputDirectory": "client",
+  "routes": [
+    { "src": "/(.*)", "dest": "/$1" },
+    { "src": "/(.*)\\.(html|js|css|png|jpg|ico|svg|eot|ttf|woff|woff2)$", "dest": "/$1.$2" },
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "env": {
+    "REACT_APP_API_URL": "@api_url"
+  }
+}
