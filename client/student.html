@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="student">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">EduPortal</div>
+      <nav class="side-nav">
+        <button class="nav-item active" data-panel="overview">Overview</button>
+        <button class="nav-item" data-panel="courses">Courses</button>
+        <button class="nav-item" data-panel="timetable">Timetable</button>
+        <button class="nav-item" data-panel="results">Results</button>
+        <button class="nav-item" data-panel="fees">Fees</button>
+        <button class="nav-item" data-panel="documents">Documents</button>
+        <button class="nav-item" data-panel="security">Security</button>
+      </nav>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Student Workspace</p>
+          <h1>Student Dashboard</h1>
+        </div>
+        <div class="topbar-actions">
+          <button id="themeToggle" class="icon-button" type="button">Mode</button>
+          <button id="logoutBtn" class="button button-secondary" type="button">Logout</button>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <section class="panel active" data-panel="overview">
+          <div class="metric-grid">
+            <article class="metric-card"><span>Courses</span><strong id="studentCourseCount">0</strong></article>
+            <article class="metric-card"><span>Average Grade</span><strong id="studentAverageGrade">-</strong></article>
+            <article class="metric-card"><span>Fee Balance</span><strong>KES 12,500</strong></article>
+            <article class="metric-card"><span>Notifications</span><strong>3</strong></article>
+          </div>
+          <div class="content-grid">
+            <section class="surface">
+              <h2>Profile</h2>
+              <div id="profileInfo" class="profile-block"></div>
+            </section>
+            <section class="surface">
+              <h2>Announcements</h2>
+              <div id="announcementList"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="courses">
+          <section class="surface">
+            <h2>Courses & Units</h2>
+            <div id="courseList" class="card-grid"></div>
+          </section>
+        </section>
+
+        <section class="panel" data-panel="timetable">
+          <section class="surface">
+            <h2>Timetable</h2>
+            <div id="timetableTable" class="table-wrap"></div>
+          </section>
+        </section>
+
+        <section class="panel" data-panel="results">
+          <section class="surface">
+            <h2>Exam Results & Grades</h2>
+            <div id="resultsTable" class="table-wrap"></div>
+          </section>
+        </section>
+
+        <section class="panel" data-panel="fees">
+          <div class="content-grid">
+            <section class="surface">
+              <h2>Fee Balance</h2>
+              <div class="fee-balance">KES 12,500</div>
+            </section>
+            <section class="surface">
+              <h2>Payment History</h2>
+              <div id="paymentHistory" class="table-wrap"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="documents">
+          <section class="surface">
+            <h2>Documents</h2>
+            <div id="documentList" class="card-grid"></div>
+          </section>
+        </section>
+
+        <section class="panel" data-panel="security">
+          <section class="surface narrow">
+            <h2>Change Password</h2>
+            <form id="passwordForm">
+              <label>Current Password</label>
+              <input type="password" name="currentPassword" required autocomplete="current-password" />
+              <label>New Password</label>
+              <input type="password" name="newPassword" required autocomplete="new-password" />
+              <button type="submit">Update Password</button>
+            </form>
+            <div id="profileStatus" class="status"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

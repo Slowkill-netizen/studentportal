@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reset Password - Student Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="reset">
+  <main class="auth-page">
+    <div class="card auth-card">
+      <h2>Create New Password</h2>
+      <form id="resetForm" novalidate>
+        <input type="hidden" name="token" />
+        <label>New Password</label>
+        <input type="password" name="password" required autocomplete="new-password" />
+        <p class="small-text">Use at least 8 characters with uppercase, lowercase, number, and one symbol: @$!%*?&#</p>
+        <button type="submit">Set Password</button>
+      </form>
+      <p class="small-text"><a href="login.html">Back to login</a></p>
+      <div id="status" class="status"></div>
+    </div>
+  </main>
+  <script src="js/auth.js"></script>
+</body>
+</html>

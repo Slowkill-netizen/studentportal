@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="admin">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">EduPortal</div>
+      <nav class="side-nav">
+        <button class="nav-item active" data-panel="overview">Overview</button>
+        <button class="nav-item" data-panel="students">Students</button>
+        <button class="nav-item" data-panel="courses">Courses</button>
+        <button class="nav-item" data-panel="fees">Fees</button>
+        <button class="nav-item" data-panel="announcements">Announcements</button>
+        <button class="nav-item" data-panel="logs">Activity Logs</button>
+      </nav>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Administration</p>
+          <h1>Admin Dashboard</h1>
+        </div>
+        <div class="topbar-actions">
+          <button id="themeToggle" class="icon-button" type="button">Mode</button>
+          <button id="logoutBtn" class="button button-secondary" type="button">Logout</button>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <section class="panel active" data-panel="overview">
+          <div class="metric-grid">
+            <article class="metric-card"><span>Total Students</span><strong id="studentCount">0</strong></article>
+            <article class="metric-card"><span>Fees Collected</span><strong id="feesCollected">KES 0</strong></article>
+            <article class="metric-card"><span>Pending Payments</span><strong id="pendingPayments">KES 0</strong></article>
+            <article class="metric-card"><span>Disabled Accounts</span><strong id="disabledCount">0</strong></article>
+          </div>
+          <section class="surface">
+            <h2>Enrollment Snapshot</h2>
+            <div class="chart-bars" id="adminChart"></div>
+          </section>
+        </section>
+
+        <section class="panel" data-panel="students">
+          <section class="surface">
+            <div class="panel-header">
+              <div>
+                <h2>Student Records</h2>
+                <p class="panel-copy">Add, edit, delete, search, and disable student accounts.</p>
+              </div>
+              <input id="studentSearch" class="input-search" type="search" placeholder="Search students" />
+            </div>
+            <form id="studentForm" class="inline-form">
+              <input type="hidden" name="id" />
+              <input type="text" name="name" placeholder="Full name" required />
+              <input type="email" name="email" placeholder="Email" required />
+              <input type="password" name="password" placeholder="Password for new student" />
+              <button type="submit">Save Student</button>
+            </form>
+            <div id="studentList" class="table-wrap"></div>
+          </section>
+        </section>
+
+        <section class="panel" data-panel="courses">
+          <section class="surface">
+            <h2>Courses & Timetable</h2>
+            <div id="courseManager" class="student-grid"></div>
+          </section>
+        </section>
+
+        <section class="panel" data-panel="fees">
+          <section class="surface">
+            <h2>Fee Records</h2>
+            <div id="feeRecords" class="table-wrap"></div>
+          </section>
+        </section>
+
+        <section class="panel" data-panel="announcements">
+          <section class="surface narrow">
+            <h2>Send Announcement</h2>
+            <form id="announcementForm">
+              <label>Title</label>
+              <input type="text" name="title" required />
+              <label>Message</label>
+              <textarea name="message" rows="5" required></textarea>
+              <button type="submit">Send Announcement</button>
+            </form>
+            <div id="announcementStatus" class="status"></div>
+          </section>
+        </section>
+
+        <section class="panel" data-panel="logs">
+          <section class="surface">
+            <h2>Login Activity Logs</h2>
+            <div id="activityLogs" class="table-wrap"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

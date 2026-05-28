@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Student Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="register">
+  <main class="auth-page">
+    <div class="card auth-card">
+      <h2>Create Account</h2>
+      <form id="registerForm" novalidate>
+        <label>Full Name</label>
+        <input type="text" name="name" required autocomplete="name" />
+        <label>Email</label>
+        <input type="email" name="email" required autocomplete="email" />
+        <label>Password</label>
+        <input type="password" name="password" required autocomplete="new-password" />
+        <p class="small-text">Use at least 8 characters with uppercase, lowercase, number, and one symbol: @$!%*?&#</p>
+        <label>Register As</label>
+        <select name="role" id="registerRole" required>
+          <option value="student">Student</option>
+          <option value="admin">Admin</option>
+        </select>
+        <div id="adminCodeField" class="hidden">
+          <label>Admin Registration Code</label>
+          <input type="password" name="adminCode" autocomplete="off" />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+      <p class="small-text">Already have an account? <a href="login.html">Login</a></p>
+      <div id="status" class="status"></div>
+    </div>
+  </main>
+  <script src="js/auth.js"></script>
+</body>
+</html>
